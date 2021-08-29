@@ -1,23 +1,25 @@
-package com.example.supermarketapp;
+package com.example.supermarketapp.ui;
 
 import android.os.Bundle;
-
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import com.example.supermarketapp.R;
+import com.example.supermarketapp.controller.GroceryController;
 import com.example.supermarketapp.databinding.ActivityScrollingBinding;
+import com.example.supermarketapp.model.GroceryItem;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 public class ScrollingActivity extends AppCompatActivity {
 
     private ActivityScrollingBinding binding;
+    private Button mOnOffButton;
+    private GroceryController mGroceryProvider = new GroceryController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +33,20 @@ public class ScrollingActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
 
-        FloatingActionButton fab = binding.fab;
-        fab.setOnClickListener(new View.OnClickListener() {
+        mOnOffButton = findViewById(R.id.onOffButton);
+        mOnOffButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                // handle on/off logic
+                mGroceryProvider.on();
             }
         });
 
-        Controller groceryProvider = new Controller();
-        groceryProvider.on();
+        mGroceryProvider.on();
+    }
+
+    private void addGroceryItem(GroceryItem item) {
+        // add item layout to UI
     }
 
     @Override

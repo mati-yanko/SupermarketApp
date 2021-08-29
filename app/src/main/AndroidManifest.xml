@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SupermarketApp">
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".ui.ScrollingActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SupermarketApp.NoActionBar">

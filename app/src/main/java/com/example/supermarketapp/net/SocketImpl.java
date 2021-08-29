@@ -1,4 +1,7 @@
-package com.example.supermarketapp;
+package com.example.supermarketapp.net;
+
+import com.example.supermarketapp.ISocketActions;
+import com.example.supermarketapp.ISocketEvents;
 
 import java.net.Socket;
 import java.util.ArrayList;

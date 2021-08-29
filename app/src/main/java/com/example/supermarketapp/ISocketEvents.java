@@ -2,5 +2,5 @@ package com.example.supermarketapp;
 
 public interface ISocketEvents {
 
-    String onDataArrived();
+    void onDataArrived(String data);
 }
