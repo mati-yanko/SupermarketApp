@@ -39,6 +39,9 @@ public class ScrollingActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Controller groceryProvider = new Controller();
+        groceryProvider.on();
     }
 
     @Override
@@ -61,4 +64,4 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-}w
+}
